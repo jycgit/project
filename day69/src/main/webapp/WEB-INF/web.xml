@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+     <display-name>day69</display-name>
+     
+     <servlet>
+        <servlet-name>framework</servlet-name>
+        <servlet-class>kr.co.tjoeun.framework.DispatchServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/../servlet/dispatch.properties</param-value>
+        </init-param>
+     </servlet>
+     <servlet-mapping>
+            <servlet-name>framework</servlet-name>
+            <url-pattern>*.do</url-pattern>
+     </servlet-mapping>
+     
+</web-app>
