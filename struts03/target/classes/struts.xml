@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+
+	<package name="step1" namespace="/" extends="struts-default">
+		<action name="ex01" class="kr.co.tjoeun.action.Ex01Action">
+			<result name="error">/err.jsp</result>
+			<result name="login">/page3.jsp</result>
+			<result name="input">/page2.jsp</result>
+			<result name="success">/page1.jsp</result>
+		</action>
+		<action name="ex02" class="kr.co.tjoeun.action.Ex02Action">
+			<interceptor-ref name="params"></interceptor-ref>
+			<result>/page2.jsp</result>
+		</action>
+	</package>
+	<package name="step2" namespace="/test1" extends="step1">
+		<action name="ex03" class="kr.co.tjoeun.action.Ex03Action">
+			<result>/page3.jsp</result>
+		</action>
+	</package>
+	<package name="dept" namespace="/dept" extends="step1">
+		<action name="list" class="kr.co.tjoeun.action.ListAction">
+			<interceptor-ref name="params"/>
+			<result>/dept/list.jsp</result>
+		</action>
+		<action name="add" class="kr.co.tjoeun.action.AddAction">
+			<result>/dept/add.jsp</result>
+		</action>
+		<action name="insert" class="kr.co.tjoeun.action.InsertAction">
+			<result name="input">/dept/add.jsp</result>
+			<result name="success" type="redirect">list.action</result>
+		</action>
+		<action name="detail" class="kr.co.tjoeun.action.DetailAction">
+			<interceptor-ref name="params"/>
+			<result>/dept/form.jsp</result>
+		</action>
+		<!-- action은 한번만 사용 가능 -->
+		<action name="edit" class="kr.co.tjoeun.action.EditAction">
+			<interceptor-ref name="params"/>
+			<result>/dept/form.jsp</result>
+		</action>
+	</package>
+</struts>
