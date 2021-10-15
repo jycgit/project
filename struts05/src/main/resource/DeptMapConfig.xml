@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+    <sqlMap>
+       <select id="selectAll" resultClass="kr.co.tjoeun.model.entity.DeptVo">
+       select * from dept order by deptno desc
+       </select>
+       <insert id="insertOne" parameterClass="kr.co.tjoeun.model.entity.DeptVo">
+       insert into dept (dname,loc) values (#dname#, #loc#)
+       </insert>
+       <select id="selectOne" parameterClass="int" resultClass="kr.co.tjoeun.model.entity.DeptVo">
+       select * from dept where deptno=#value#
+       </select>
+       <update id="updateOne" parameterClass="kr.co.tjoeun.model.entity.DeptVo">
+       update dept set dname=#dname#, loc=#loc# where deptno=#deptno#
+       </update>
+       <delete id="deleteOne" parameterClass="kr.co.tjoeun.model.entity.DeptVo">
+       detele from dept where deptno=#value#
+       </delete>
+    </sqlMap>

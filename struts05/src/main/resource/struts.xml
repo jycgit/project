@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+     <package name="default" extends="struts-default">
+         <action name="index">
+            <result>/index.jsp</result>
+         </action>
+         <action name="list" class="kr.co.tjoeun.action.ListAction" method="list">
+             <result>/list.jsp</result>
+         </action>
+         <action name="add">
+            <result>/add.jsp</result>
+         </action>
+         <action name="insert" class="kr.co.tjouen.action.ListAction " method="add">
+            <result type="chain">list</result>
+            <!-- jsp가 아닌 do로  -->
+         </action>
+         <action name="detail" class="kr.co.tjoeun.action.ListAction" method="listOne">
+            <result>/one.jsp</result>
+         </action>
+         <action name="delete" class="kr.co.tjoeun.action.ListAction" method="detail">
+            <result type="redirect">/list.do</result>
+         </action>
+         <action name="update" class="kr.co.tjoeun.action.ListAction" method="update">
+             <result type="redirectAction">
+                 <param name="actionName">detail</param>
+                 <param name="deptno">${bean.deptno}</param>
+             </result>
+         </action>
+     </package>
+</struts>

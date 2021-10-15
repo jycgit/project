@@ -1,0 +1,8 @@
+rc-service lightdm start
+
+컨테이너 중지, 삭제
+
+톰캣 이미지 삭제
+
+docker pull tomcat:8.5 설치
+
