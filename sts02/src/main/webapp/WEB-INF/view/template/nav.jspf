@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home.do">
+        <div>더조은 교육센터</div>
+      </a>
+    </div>
+    <p class="navbar-text"><a href="list.do">DEPT</a></p>
+    <p class="navbar-text"><a href="#">EMP</a></p>
+    <p class="navbar-text navbar-right"><a href="#">LOGIN</a></p>
+  </div>
+</nav>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+<!-- 싱글톤 기반, bean은 하나의 객체 -->
+  <bean id="handlerMapping"
+	class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+
+	<bean name="/home.do" 
+	class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="home"></property>
+	</bean>
+
+   <bean name="/list.do"
+   class="kr.co.tjoeun.controller.ListController">
+       <property name="dao" ref="dao"></property>
+   </bean>
+   
+   <bean name="/add.do"
+   class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+      <property name="viewName" value="add"></property>
+   </bean>
+   <bean name="/insert.do"
+   class="kr.co.tjoeun.controller.AddController">
+      <property name="dao" ref="dao"></property>
+   </bean>
+   <bean name="/detail.do"
+   class="kr.co.tjoeun.controller.DetailController" >
+       <property name="dao" ref="dao"></property>
+   </bean>
+  
+	<bean name="/delete.do"
+	class="kr.co.tjoeun.controller.DeleteController">
+		<property name="deptDao" ref="dao"></property>
+	</bean>
+	<bean name="/edit.do"
+	class="kr.co.tjoeun.controller.EditController">
+		<property name="deptDao" ref="dao"></property>
+	</bean>
+  
+
+    <bean name="/update.do"
+	class="kr.co.tjoeun.controller.UpdateController">
+		<property name="deptDao" ref="dao"></property>
+	</bean>
+
+    
+   <bean id="viewResoler"
+   class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/views/"></property>
+      <property name="suffix" value=".jsp"></property>   
+   </bean>
+</beans>
