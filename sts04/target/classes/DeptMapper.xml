@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+    <sqlMap>
+    <typeAlias alias="bean" type="kr.co.tjoeun.dept.model.entity.DeptVo"/>
+      <select id="selectAll" resultClass="kr.co.tjoeun.dept.model.entity.DeptVo">
+		select * from dept order by deptno desc
+	</select> 
+	<insert id="insertOne" >
+	   insert into dept (dname,loc) values ('test','test');
+	</insert>
+	<update id="updateOne" parameterClass="bean">
+	  update dept set dname=#dname#,loc=#loc# where deptno=(select * from (select max(deptno) from dept) as A)
+	</update>
+	<select id="selectOne" parameterClass="int" resultClass="bean">
+	   select * from dept where deptno=#value#
+	</select>
+	<delete id="deleteOne" parameterClass="int">
+	   delete from dept where deptno=#value#
+	</delete>
+	
+    </sqlMap>

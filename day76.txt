@@ -1,0 +1,26 @@
+https://gitlab.com/bit01class
+
+main에 java, resource 폴더생성, test에  java, resource 폴더생성
+
+log4j
+# Set root logger level to DEBUG and its only appender to A1.
+log4j.rootLogger=DEBUG, A1
+
+# A1 is set to be a ConsoleAppender.
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+
+# A1 uses PatternLayout.
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%-4r [%t] %-5p %c %x - %m%n
+
+docker run -d -it -v D:/framework/docker/DBdata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql -p 33306:3306 --name testDB mysql
+
+docker desktop 사용법
+
+docker container commit testDB 이미지명 
+
+docker tag 이미지명 계정명/이미지명:버전
+       -->   ( 이미지 아이디, bit01class/test2:tag)
+
+docker push 계정명/이미지명:버전
+
