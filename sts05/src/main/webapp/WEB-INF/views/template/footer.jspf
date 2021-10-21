@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-12">
+	  	<address>
+		  <strong>더조은컴퓨터아카데미</strong><br>
+		  서울특별시 종로구 삼일대로 17길 51, 3,4,5층(관철동, 스타골드빌딩)<br>
+		  <abbr title="Phone">P:</abbr> 1588.8748
+		</address>
+		<p>ⓒ THEJOEUN ACADEMY Corp.</p>
+	  </div>
+	</div>
+</div>
